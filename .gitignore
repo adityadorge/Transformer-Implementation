@@ -1,1 +1,13 @@
+# Byte-compiled / cache
 __pycache__/
+*.py[cod]
+
+# Virtualenvs
+venv/
+.venv/
+
+# Editors and OS
+.vscode/
+
+
+
