@@ -1,0 +1,49 @@
+# ==============================================================================
+# DATA CONFIGURATION
+# ==============================================================================
+config_version: "1.0.0"
+
+environment:
+  mode: "development"  # Options: development, staging, production
+  storage:
+    root_dir: "data"
+    raw_dir: "data/raw"
+    processed_dir: "data/processed"
+    cache_dir: "data/.cache"
+
+datasets:
+  tiny_shakespeare:
+    name: "Tiny Shakespeare"
+    version: "1.0.0"
+    
+    metadata:
+      description: >
+        Tiny Shakespeare corpus commonly used for character-level language
+        modeling experiments and educational GPT implementations.
+      license: "MIT"
+      
+    source:
+      type: "http"
+      url: "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt"
+      filename: tiny_shakespeare_raw.txt 
+      format: "text/plain"
+      encoding: utf-8 
+      checksum:
+        algorithm: "sha256"
+        value: "9f323136209e738ff8dd946b5a3cb98e6ff059635f299166f272a806c04f95d9"
+        
+    storage_mapping:
+      raw: "tiny_shakespeare_raw.txt"
+      processed: "tiny_shakespeare/"
+      cache: "tiny_shakespeare/"
+
+    # Tokenizer Configuration (Character-level)
+    tokenizer:
+      type: "character"
+      # special_tokens:   # Out-of-the-box support for special mapping cases
+      #   pad_token: "<PAD>"
+      #   unk_token: "<UNK>"
+   
+    cache:
+      enabled: true
+      compress: false

@@ -8,6 +8,8 @@ venv/
 
 # Editors and OS
 .vscode/
+# research related data
+research/
 
 
 
