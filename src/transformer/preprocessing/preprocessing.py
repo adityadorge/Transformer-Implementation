@@ -3,7 +3,7 @@ import logging
 import torch
 
 from src.transformer.config.schemas.dataset import AppConfig
-from src.transformer.tokenizer.character_level_tokenizer import CharacterTokenizer
+from transformer.tokenizer.character_level.character_level_tokenizer import CharacterTokenizer
 
 logger = logging.getLogger(__name__)
 
